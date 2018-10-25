@@ -12,9 +12,16 @@ $(document).ready(function() {
         result+=romans[i];
       }
       decimal=remainder;
-    }
+    };
+    result=result.replace(/C{4}/,"CD")
+    result=result.replace(/X{4}/,"XL")
+    result=result.replace(/I{4}/,"IV")
+    result=result.replace(/DCD/,"CM")
+    result=result.replace(/LXL/,"XC")
+    result=result.replace(/VIV/,"IX")
 
-    $("#story").append ("<p>"+result+"</p>");
+    $("#story").append("<p>"+result+"</p>");
+    $("#story").append("<p>"+nextResult+"</p>");
     $("#story").show();
   });
 });
